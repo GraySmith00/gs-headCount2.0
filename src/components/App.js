@@ -18,6 +18,7 @@ class App extends Component {
     super();
     this.state = {
       categoryIndex: 0,
+      categories: [],
       category: {},
       districts: [],
       selectedDistricts: []
@@ -25,17 +26,27 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.populateCategories();
     this.populateDistrictData(kindergartnersInFullDayPropgram, 0);
   }
 
-  changeCategory = categoryIndex => {
+  populateCategories = () => {
     const categories = [
       kindergartnersInFullDayPropgram,
       thirdGradeTests,
       eigthGradeTestScores,
       averageRaceEthnicityMathScores
     ];
-    this.populateDistrictData(categories[categoryIndex], categoryIndex);
+    this.setState({
+      categories
+    });
+  };
+
+  changeCategory = categoryIndex => {
+    this.populateDistrictData(
+      this.state.categories[categoryIndex],
+      categoryIndex
+    );
   };
 
   populateDistrictData = (data, categoryIndex) => {
@@ -49,14 +60,8 @@ class App extends Component {
   };
 
   filterCards = string => {
-    const categories = [
-      kindergartnersInFullDayPropgram,
-      thirdGradeTests,
-      eigthGradeTestScores,
-      averageRaceEthnicityMathScores
-    ];
     const category = new DistrictRepository(
-      categories[this.state.categoryIndex]
+      this.state.categories[this.state.categoryIndex]
     );
     const districts = category.findAllMatches(string);
     this.setState({
