@@ -74,7 +74,7 @@ describe('ComparisonCard component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('Matches the snapshot', () => {
+  it('should match the snapshot', () => {
     expect(wrapper.html()).toMatchSnapshot();
   });
 });

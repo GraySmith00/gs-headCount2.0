@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
 
 import '../css/App.css';
-import kinderGartenData from '../data/kindergartners_in_full_day_program';
+import kindergartnersInFullDayPropgram from '../data/kindergartners_in_full_day_program';
+import thirdGradeTests from '../data/3rd_grade_tests';
+import eigthGradeTestScores from '../data/8th_grade_test_scores';
+import averageRaceEthnicityMathScores from '../data/average_race_ethnicity_math_scores';
+
 import DistrictRepository from '../helper';
+
 import DistrictContainer from './DistrictContainer';
 import Search from './Search';
 import ComparisonContainer from './ComparisonContainer';
+import SelectCategory from './SelectCategory';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      categoryIndex: 0,
       category: {},
       districts: [],
       loading: true,
@@ -19,20 +26,39 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.populateDistrictData(kinderGartenData);
+    this.populateDistrictData(kindergartnersInFullDayPropgram);
   }
 
-  populateDistrictData = data => {
+  changeCategory = categoryIndex => {
+    const categories = [
+      kindergartnersInFullDayPropgram,
+      thirdGradeTests,
+      eigthGradeTestScores,
+      averageRaceEthnicityMathScores
+    ];
+    this.populateDistrictData(categories[categoryIndex], categoryIndex);
+  };
+
+  populateDistrictData = (data, categoryIndex) => {
     const category = new DistrictRepository(data);
     const districts = category.findAllMatches();
     this.setState({
+      categoryIndex,
       category,
       districts
     });
   };
 
   filterCards = string => {
-    const category = new DistrictRepository(kinderGartenData);
+    const categories = [
+      kindergartnersInFullDayPropgram,
+      thirdGradeTests,
+      eigthGradeTestScores,
+      averageRaceEthnicityMathScores
+    ];
+    const category = new DistrictRepository(
+      categories[this.state.categoryIndex]
+    );
     const districts = category.findAllMatches(string);
     this.setState({
       districts
@@ -63,7 +89,10 @@ class App extends Component {
       <div className="app">
         <div className="container">
           <h1>Welcome To Headcount 2.0</h1>
-          <Search filterCards={this.filterCards} />
+          <section className="filters">
+            <Search filterCards={this.filterCards} />
+            <SelectCategory changeCategory={this.changeCategory} />
+          </section>
           <ComparisonContainer
             selectedDistricts={this.state.selectedDistricts}
             toggleSelected={this.toggleSelected}

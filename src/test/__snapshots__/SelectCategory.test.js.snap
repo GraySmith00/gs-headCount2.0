@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectCategory component should match the snapshot 1`] = `"<div><select class=\\"select-category\\"><option value=\\"0\\">Kindergartners In Full Day Propgram</option><option value=\\"1\\">Third Grade Tests</option><option value=\\"2\\">Eigth Grade Test Scores</option><option value=\\"3\\">Average Race Ethnicity MathScores</option></select></div>"`;

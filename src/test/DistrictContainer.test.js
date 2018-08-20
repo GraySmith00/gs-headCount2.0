@@ -63,6 +63,6 @@ describe('DistrictContainer component', () => {
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper.html()).toMatchSnapshot;
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

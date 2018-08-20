@@ -15,6 +15,17 @@ h1 {
   font-size: 3em;
 }
 
+.filters {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  margin: 0 2em 2em 0;
+}
+
+.filters > * {
+  margin-right: 2em;
+}
+
 @media only screen and (max-width: 1350px) {
   .container {
     width: 90%;

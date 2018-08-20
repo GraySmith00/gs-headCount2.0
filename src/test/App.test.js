@@ -38,6 +38,7 @@ describe('App component', () => {
   });
 
   it('should filter the districts array when filter cards is invoked', () => {
+    wrapper.state().categoryIndex = 0;
     wrapper.instance().filterCards('co');
     expect(wrapper.state().districts.length).toBeLessThan(181);
   });

@@ -22,7 +22,7 @@ describe('Search component', () => {
     expect(wrapper.state().searchValue).toEqual('');
   });
 
-  it('it should bind searchValue state to input value', () => {
+  it('it should set the searchValue state when changing the input value', () => {
     wrapper
       .find('.search-input')
       .simulate('change', { target: { name: 'searchValue', value: 'Denver' } });
@@ -39,6 +39,6 @@ describe('Search component', () => {
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper.html()).toMatchSnapshot;
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });

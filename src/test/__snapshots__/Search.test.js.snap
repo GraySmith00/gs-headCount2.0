@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component should match the snapshot 1`] = `"<div><form><input type=\\"search\\" name=\\"searchValue\\" value=\\"\\" class=\\"search-input\\" placeholder=\\"Search for a district...\\"/></form></div>"`;
