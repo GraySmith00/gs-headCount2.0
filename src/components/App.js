@@ -20,13 +20,12 @@ class App extends Component {
       categoryIndex: 0,
       category: {},
       districts: [],
-      loading: true,
       selectedDistricts: []
     };
   }
 
   componentDidMount() {
-    this.populateDistrictData(kindergartnersInFullDayPropgram);
+    this.populateDistrictData(kindergartnersInFullDayPropgram, 0);
   }
 
   changeCategory = categoryIndex => {
