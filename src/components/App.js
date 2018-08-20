@@ -89,6 +89,7 @@ class App extends Component {
   };
 
   render() {
+    const { selectedDistricts, category, districts } = this.state;
     return (
       <div className="app">
         <div className="container">
@@ -98,15 +99,15 @@ class App extends Component {
             <SelectCategory changeCategory={this.changeCategory} />
           </section>
           <ComparisonContainer
-            selectedDistricts={this.state.selectedDistricts}
+            selectedDistricts={selectedDistricts}
             toggleSelected={this.toggleSelected}
-            category={this.state.category}
+            category={category}
           />
           <DistrictContainer
-            districts={this.state.districts}
+            districts={districts}
             toggleSelected={this.toggleSelected}
-            category={this.state.category}
-            selectedDistricts={this.state.selectedDistricts}
+            category={category}
+            selectedDistricts={selectedDistricts}
           />
         </div>
       </div>
