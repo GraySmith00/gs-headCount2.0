@@ -7,7 +7,7 @@ const DistrictCard = ({
   stats,
   selected,
   toggleSelected,
-  category,
+  categoryData,
   selectedCards
 }) => {
   let average;
@@ -17,9 +17,11 @@ const DistrictCard = ({
       <p>
         AVG :{' '}
         <span
-          className={category.findAverage(location) < 0.5 ? 'subPointFive' : ''}
+          className={
+            categoryData.findAverage(location) < 0.5 ? 'subPointFive' : ''
+          }
         >
-          {category.findAverage(location)}
+          {categoryData.findAverage(location)}
         </span>
       </p>
     );
@@ -52,7 +54,7 @@ DistrictCard.propTypes = {
   stats: PropTypes.object.isRequired,
   selected: PropTypes.bool.isRequired,
   toggleSelected: PropTypes.func.isRequired,
-  category: PropTypes.object.isRequired,
+  categoryData: PropTypes.object.isRequired,
   selectedCards: PropTypes.bool.isRequired
 };
 

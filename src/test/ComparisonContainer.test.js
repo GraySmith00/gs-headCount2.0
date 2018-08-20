@@ -13,7 +13,7 @@ describe('ComparisonContainer component', () => {
   let wrapper;
   let selectedDistricts;
   let toggleSelected;
-  let category;
+  let categoryData;
 
   beforeEach(() => {
     selectedDistricts = [
@@ -36,7 +36,7 @@ describe('ComparisonContainer component', () => {
     ];
 
     toggleSelected = jest.fn();
-    category = new DistrictRepository(kinderData);
+    categoryData = new DistrictRepository(kinderData);
   });
 
   it('renders without crashing', () => {
@@ -45,7 +45,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />,
       div
     );
@@ -59,7 +59,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
 
@@ -82,7 +82,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
 
@@ -94,7 +94,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
 
@@ -106,7 +106,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
 
@@ -118,7 +118,7 @@ describe('ComparisonContainer component', () => {
       <ComparisonContainer
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
     expect(wrapper.html()).toMatchSnapshot();

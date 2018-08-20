@@ -8,7 +8,7 @@ import ComparisonCard from './ComparisonCard';
 const ComparisonContainer = ({
   selectedDistricts,
   toggleSelected,
-  category
+  categoryData
 }) => {
   let cardOne;
   let cardTwo;
@@ -33,7 +33,7 @@ const ComparisonContainer = ({
         <DistrictCard
           {...selectedDistricts[0]}
           toggleSelected={toggleSelected}
-          category={category}
+          categoryData={categoryData}
           selectedCards={selectedCards}
         />
       </div>
@@ -44,14 +44,14 @@ const ComparisonContainer = ({
       <DistrictCard
         {...selectedDistricts[1]}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
         selectedCards={selectedCards}
       />
     );
     comparisonCard = (
       <ComparisonCard
         selectedDistricts={selectedDistricts}
-        category={category}
+        categoryData={categoryData}
         selectedCards={selectedCards}
       />
     );
@@ -69,7 +69,7 @@ const ComparisonContainer = ({
 ComparisonContainer.propTypes = {
   selectedDistricts: PropTypes.array.isRequired,
   toggleSelected: PropTypes.func.isRequired,
-  category: PropTypes.object.isRequired
+  categoryData: PropTypes.object.isRequired
 };
 
 export default ComparisonContainer;

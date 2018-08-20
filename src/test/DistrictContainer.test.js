@@ -12,7 +12,7 @@ describe('DistrictContainer component', () => {
   let selectedDistricts;
 
   const mockState = {
-    category: new DistrictRepository(kinderData),
+    categoryData: new DistrictRepository(kinderData),
     districts: new DistrictRepository(kinderData).findAllMatches()
   };
 
@@ -40,7 +40,7 @@ describe('DistrictContainer component', () => {
       <DistrictContainer
         districts={mockState.districts}
         toggleSelected={toggleSelected}
-        category={mockState.category}
+        categoryData={mockState.categoryData}
         selectedDistricts={selectedDistricts}
       />
     );
@@ -53,7 +53,7 @@ describe('DistrictContainer component', () => {
       <DistrictContainer
         districts={mockState.districts}
         toggleSelected={toggleSelected}
-        category={mockState.category}
+        categoryData={mockState.categoryData}
         selectedDistricts={selectedDistricts}
       />,
       div
