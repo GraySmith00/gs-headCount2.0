@@ -12,8 +12,7 @@ describe('DistrictCard', () => {
   let toggleSelected;
 
   const mockState = {
-    category: new DistrictRepository(kinderGartenData),
-    loading: false
+    category: new DistrictRepository(kinderGartenData)
   };
   const card = mockState.category.stats['YUMA SCHOOL DISTRICT 1'];
 

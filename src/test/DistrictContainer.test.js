@@ -13,8 +13,7 @@ describe('DistrictContainer component', () => {
 
   const mockState = {
     category: new DistrictRepository(kinderData),
-    districts: new DistrictRepository(kinderData).findAllMatches(),
-    loading: false
+    districts: new DistrictRepository(kinderData).findAllMatches()
   };
 
   beforeEach(() => {
@@ -63,6 +62,6 @@ describe('DistrictContainer component', () => {
   });
 
   it('should match the snapshot', () => {
-    expect(wrapper.html()).toMatchSnapshot;
+    expect(wrapper.html()).toMatchSnapshot();
   });
 });
