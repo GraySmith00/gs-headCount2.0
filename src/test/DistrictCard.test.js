@@ -12,9 +12,9 @@ describe('DistrictCard', () => {
   let toggleSelected;
 
   const mockState = {
-    category: new DistrictRepository(kinderGartenData)
+    categoryData: new DistrictRepository(kinderGartenData)
   };
-  const card = mockState.category.stats['YUMA SCHOOL DISTRICT 1'];
+  const card = mockState.categoryData.stats['YUMA SCHOOL DISTRICT 1'];
 
   beforeEach(() => {
     toggleSelected = jest.fn();
@@ -23,7 +23,7 @@ describe('DistrictCard', () => {
         {...card}
         toggleSelected={toggleSelected}
         selected={false}
-        category={mockState.category}
+        categoryData={mockState.categoryData}
         selectedCards={true}
       />
     );
@@ -36,7 +36,7 @@ describe('DistrictCard', () => {
         {...card}
         toggleSelected={toggleSelected}
         selected={false}
-        category={mockState.category}
+        categoryData={mockState.categoryData}
         selectedCards={true}
       />,
       div

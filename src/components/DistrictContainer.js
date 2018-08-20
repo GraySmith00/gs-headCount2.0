@@ -6,7 +6,7 @@ import '../css/DistrictContainer.css';
 const DistrictContainer = ({
   districts,
   toggleSelected,
-  category,
+  categoryData,
   selectedDistricts
 }) => {
   let districtCards;
@@ -18,7 +18,7 @@ const DistrictContainer = ({
       key={`${i}-${district.location}`}
       {...district}
       toggleSelected={toggleSelected}
-      category={category}
+      categoryData={categoryData}
       selectedCards={selectedCards}
     />
   ));
@@ -42,7 +42,7 @@ const DistrictContainer = ({
 DistrictContainer.propTypes = {
   districts: PropTypes.array.isRequired,
   toggleSelected: PropTypes.func.isRequired,
-  category: PropTypes.object.isRequired,
+  categoryData: PropTypes.object.isRequired,
   selectedDistricts: PropTypes.array.isRequired
 };
 

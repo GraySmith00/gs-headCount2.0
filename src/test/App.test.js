@@ -17,16 +17,16 @@ describe('App component', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 
-  it('should populate the category object in state when the component mounts', () => {
-    expect(wrapper.state().category).not.toEqual({});
+  it('should populate the categoryData object in state when the component mounts', () => {
+    expect(wrapper.state().categoryData).not.toEqual({});
   });
 
   it('should populate the districts array in state when the component mounts', () => {
     expect(wrapper.state().districts).not.toEqual([]);
   });
 
-  it('should have 181 stats in category.stats state', () => {
-    expect(Object.keys(wrapper.state().category.stats).length).toEqual(181);
+  it('should have 181 stats in categoryData.stats state', () => {
+    expect(Object.keys(wrapper.state().categoryData.stats).length).toEqual(181);
   });
 
   it('should render the DistrictContainer component', () => {

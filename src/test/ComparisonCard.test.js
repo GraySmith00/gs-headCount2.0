@@ -30,12 +30,12 @@ describe('ComparisonCard component', () => {
     ];
 
     const toggleSelected = jest.fn();
-    const category = new DistrictRepository(kinderData);
+    const categoryData = new DistrictRepository(kinderData);
     wrapper = shallow(
       <ComparisonCard
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />
     );
   });
@@ -61,13 +61,13 @@ describe('ComparisonCard component', () => {
     ];
 
     const toggleSelected = jest.fn();
-    const category = new DistrictRepository(kinderData);
+    const categoryData = new DistrictRepository(kinderData);
     const div = document.createElement('div');
     ReactDOM.render(
       <ComparisonCard
         selectedDistricts={selectedDistricts}
         toggleSelected={toggleSelected}
-        category={category}
+        categoryData={categoryData}
       />,
       div
     );

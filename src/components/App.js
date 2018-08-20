@@ -19,7 +19,7 @@ class App extends Component {
     this.state = {
       categoryIndex: 0,
       categories: [],
-      category: {},
+      categoryData: {},
       districts: [],
       selectedDistricts: []
     };
@@ -50,20 +50,20 @@ class App extends Component {
   };
 
   populateDistrictData = (data, categoryIndex) => {
-    const category = new DistrictRepository(data);
-    const districts = category.findAllMatches();
+    const categoryData = new DistrictRepository(data);
+    const districts = categoryData.findAllMatches();
     this.setState({
       categoryIndex,
-      category,
+      categoryData,
       districts
     });
   };
 
   filterCards = string => {
-    const category = new DistrictRepository(
+    const categoryData = new DistrictRepository(
       this.state.categories[this.state.categoryIndex]
     );
-    const districts = category.findAllMatches(string);
+    const districts = categoryData.findAllMatches(string);
     this.setState({
       districts
     });
@@ -89,7 +89,7 @@ class App extends Component {
   };
 
   render() {
-    const { selectedDistricts, category, districts } = this.state;
+    const { selectedDistricts, categoryData, districts } = this.state;
     return (
       <div className="app">
         <div className="container">
@@ -101,12 +101,12 @@ class App extends Component {
           <ComparisonContainer
             selectedDistricts={selectedDistricts}
             toggleSelected={this.toggleSelected}
-            category={category}
+            categoryData={categoryData}
           />
           <DistrictContainer
             districts={districts}
             toggleSelected={this.toggleSelected}
-            category={category}
+            categoryData={categoryData}
             selectedDistricts={selectedDistricts}
           />
         </div>
